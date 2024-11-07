@@ -43,19 +43,19 @@ APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principaleme
    ```
    Supprime le paquet et tous ses fichiers de configuration.
 
-7. **Nettoyer les paquets inutilisés**
+- **Nettoyer les paquets inutilisés**
    ```sh
    sudo apt autoremove
    ```
-   Cette commande supprime les paquets qui ont été installés automatiquement pour satisfaire les dépendances d'autres paquets et qui ne sont plus nécessaires.
+   Supprime automatiquement les dépendances inutilisées
 
-8. **Nettoyer le cache des paquets**
+- **Nettoyer le cache des paquets**
    ```sh
    sudo apt clean
    ```
-   Cette commande supprime les fichiers de paquets téléchargés dans le cache.
+   Supprime les fichiers `.deb` téléchargés présent dans le cache (répertoire /var/cache/apt/archives/).
 
-9. **Rechercher un paquet**
+- **Rechercher un paquet**
    ```sh
    apt search <mot_clé>
    ```
