@@ -244,7 +244,9 @@ Voci un exemple:
 → **git add .**  
 → **git commit -M "Descritption de ce que j'ai modifié"**  
 → **git push**
+
 ---
+
 ### **Notes supplémentaires**
 - **`git pull`** : Cette commande est équivalente à `git fetch` suivi de `git merge`. Elle permet de récupérer les changements distants et de les fusionner avec la branche actuelle.
 - **`git reset --hard`** : Attention ! Cette commande supprime définitivement les changements non validés et ne peut pas être annulée.
