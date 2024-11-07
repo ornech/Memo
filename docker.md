@@ -1,12 +1,16 @@
 # 🐳 DOCKER
 ---
-### 🎯 **Divers**
+### 🎯 **Problêmes divers**
 
 - **Gestion des permissions pour Docker :**
+  Si erreur `dial unix /var/run/docker.sock: connect: permission denied`
   ```bash
   sudo usermod -aG docker $USER
+   ```  
+- **Afficher les logs d'un conteneur  :**
+  ```bash
+  docker logs <nom_conteneur>
    ```
-
 ### 🚀 **Commandes de Base Docker**
 
 - **Lister les conteneurs actifs :**
@@ -29,11 +33,6 @@
   ```bash
   docker rm <nom_du_conteneur_ou_ID>
   ```
-- **Supprimer une image :**
-  ```bash
-  docker rmi <ID_de_l_image>
-  ```
-
 ---
 
 ### 📦 **Gestion des Images**
@@ -59,6 +58,10 @@
   ```
   *Exemple :* `docker tag my_image myrepo/my_image:1.1`
 
+- **Supprimer une image :**
+  ```bash
+  docker rmi <ID_de_l_image>
+  ```
 ---
 
 ### 🏃 **Exécution et Gestion des Conteneurs**
@@ -106,6 +109,17 @@
 - **Attacher un conteneur à un réseau :**
   ```bash
   docker network connect <nom_du_réseau> <nom_du_conteneur>
+  ```
+  > ℹ️ Infor
+  > Réseaux Docker par défaut
+  > `bridge` : Réseau par défaut pour les conteneurs, permettant la communication entre eux via leur adresse IP, avec isolation de base
+  > `host` : Les conteneurs partagent directement le réseau de l'hôte, sans isolation, utile pour les applications nécessitant un accès direct au réseau.
+  > `none` : Aucune configuration réseau, les conteneurs sont complètement isolés sans accès réseau.
+
+  
+- **Mapper un port: ** 
+  ```bash
+  docker run -d -p <port_local>:<port_du_conteneur> nginx
   ```
 
 ---
