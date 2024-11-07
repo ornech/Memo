@@ -4,11 +4,11 @@
 Un workflow Git est la façon dont une équipe utilise Git pour organiser et gérer son code, les branches et les contributions. Il consiste en une série d'étapes standardisées que les contributeurs suivent tous afin de garantir une collaboration efficace, d'éviter les conflits de code et d'assurer une gestion fluide des versions.
 
 Voci un exemple:  
-→ **Git pull**  
-→ **Create a new branch**  
-→ **Modify files**  
+→ **git pull**  
+→ **git checkout -a <nouvelle branche>**  
+→ **Modification et ajouts de fichiers**  
 → **git add .**  
-→ **git commit**  
+→ **git commit -M "Descritption de ce que j'ai modifié"**  
 → **git push**
 
 ### **Configuration initiale**
