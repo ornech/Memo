@@ -1,4 +1,4 @@
-# DOCKER
+# 🐳 DOCKER
 ---
 ### 🎯 **Divers**
 
@@ -178,5 +178,3 @@ Voici un tableau des options couramment utilisées et intéressantes avec `docke
 | `--restart`      | Définit une politique de redémarrage automatique pour le conteneur (utile pour les services).                    | `docker run --restart always <nom_image>`                                                         |
 | `--log-driver`   | Configure le driver de journalisation pour le conteneur (json-file, syslog, etc.).                               | `docker run --log-driver syslog <nom_image>`                                                      |
 | `--link`         | Connecte directement deux conteneurs, permettant à l'un d'accéder à l'autre par son nom (moins utilisé).         | `docker run --link conteneur1:alias_conteneur1 <nom_image>`                                       |
-
-Ce tableau résume les options essentielles pour des configurations fréquentes de conteneurs Docker, facilitant la gestion des ressources, la persistance des données, la communication entre conteneurs et le déploiement de services.
