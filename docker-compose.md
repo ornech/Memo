@@ -159,6 +159,99 @@ networks:
   my_network:  # Déclare le réseau
 ```
 
+### Isolés les réseaux des services
+On peut isoler les services `web` et `db` en les plaçant dans des réseaux différents (par exemple le service `web` dans un réseau `frontend` et `db` dans le réseau `backend`). Cela améliore la sécurité en limitant les communications entre services à ce qui est nécessaire.
+
+```yaml
+version: '3.8'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    networks:
+      - frontend
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: example
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: example
+    networks:
+      - backend
+
+networks:
+  frontend:
+    driver: bridge  # Utilise le pilote bridge par défaut
+
+  backend:
+    driver: bridge  # Utilise également un réseau bridge isolé pour la base de données
+```
+
+Dans cet exemple, les services `web` et `db` sont isolés l'un de l'autre. Le conteneur `web` ne pourra pas accéder à `db` à moins d'être connecté au même réseau.
+
+#### Utilisation d'un Sous-Réseau Personnalisé
+
+Pour un contrôle réseau encore plus précis, vous pouvez définir des sous-réseaux spécifiques (par exemple, pour des besoins de routage ou de contrôle IP).
+
+```yaml
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.10.0/24  # Définit un sous-réseau spécifique
+```
+
+Ici tous les conteneurs connectés au réseau `backend` auront des adresses IP dans la plage `192.168.10.0/24`, ce qui permet de gérer les connexions par IP fixe si nécessaire.
+
+> Docker prend en charge plusieurs pilotes de réseau :
+> - **Bridge** (par défaut) : utilisé pour des réseaux locaux isolés.
+> - **Host** : le conteneur partage le réseau du host, utile pour éviter la latence liée à la translation d'adresses IP. Disponible uniquement sur Linux.
+>   - **Overlay** : pour connecter des conteneurs sur différents hôtes dans un cluster Swarm.
+>  - **Macvlan** : permet aux conteneurs d'avoir leur propre adresse MAC, utile pour l'intégration avec des réseaux physiques.
+
+Exemple d'utilisation du pilote `host` (principalement pour des tests de performance) :
+
+```yaml
+networks:
+  host_network:
+    driver: host
+```
+
+#### Exemples de Réseau Multi-Services avec Accès Contrôlé
+
+On peut combiner les réseaux pour permettre à certains services d'accéder à plusieurs réseaux. Par exemple, un service `api` peut accéder à `web` et `db` si les réseaux sont bien configurés.
+
+```yaml
+services:
+  web:
+    image: nginx:latest
+    networks:
+      - frontend
+
+  api:
+    image: myapi:latest
+    networks:
+      - frontend
+      - backend
+
+  db:
+    image: postgres:latest
+    networks:
+      - backend
+
+networks:
+  frontend:
+    driver: bridge
+
+  backend:
+    driver: bridge
+```
+`api` peut accéder à `web` et `db`, mais `web` et `db` ne peuvent pas communiquer entre eux directement.
+
 ---
 
 ## Dépendances entre Services
