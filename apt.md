@@ -116,12 +116,12 @@ Voici un tableau récapitulatif des commandes liées à **APT** (Advanced Packag
 
 | **Commande**             | **Description**                                                                                                    |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------|
-| **`apt`**                 | Interface utilisateur simplifiée pour gérer les paquets : installation, mise à jour, suppression, etc.             |
+| **`apt`**                 | Outil de gestion des paquets simplifié: installation, mise à jour, suppression, etc.             |
 | **`apt-cdrom`**           | Permet d'ajouter un CD-ROM comme source de paquets pour `APT`. Utilisé pour les systèmes sans connexion Internet.   |
 | **`aptdcon`**             | Outil graphique pour gérer les paquets en ligne de commande à partir de `APT`. C'est une interface pour `apt` en mode console. |
-| **`apt-get`**             | Outil de gestion des paquets en ligne de commande, plus ancien que `apt`. Il permet d'installer, de mettre à jour, et de gérer les paquets. |
+| **`apt-get`**             | Outil de gestion des paquets plus avancé que `apt`. Référez vous à la doc `man apt-get` |
 | **`apt-sortpkgs`**        | Trie les paquets `.deb` téléchargés, ce qui peut être utile pour l'archivage ou la gestion des paquets localement.  |
-| **`apt-add-repository`**  | Permet d'ajouter des dépôts supplémentaires à la liste de sources de `APT` (par exemple, des PPA pour Ubuntu).        |
+| **`apt-add-repository`**  | Permet d'ajouter des dépôts supplémentaires à la liste de sources de `APT` .        |
 | **`apt-config`**          | Utilitaire pour afficher ou modifier la configuration d'APT. Permet d'examiner les paramètres d'APT.                |
 | **`apt-extracttemplates`**| Utilisé pour extraire des modèles de configuration à partir de paquets `.deb` pour les personnaliser.                |
 | **`apt-key`**             | Outil pour gérer les clés GPG utilisées pour vérifier les paquets des dépôts.                                      |
