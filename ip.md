@@ -1,4 +1,4 @@
-# Mémo sur la commande `ip` sous Linux
+# Commande `ip` sous Linux
 
 La commande `ip` est un outil puissant pour gérer et configurer les réseaux sous Linux. Elle fait partie du paquet **iproute2** et permet de visualiser, ajouter, supprimer, ou modifier des interfaces réseau, des adresses IP, et des routes. La commande `ip` est souvent préférée à des outils plus anciens comme `ifconfig` et `route` en raison de sa flexibilité et de ses fonctionnalités avancées.
 
