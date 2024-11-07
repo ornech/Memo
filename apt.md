@@ -1,45 +1,47 @@
-### Mémo sur APT (Advanced Package Tool)
+# APT (Advanced Package Tool)
 
 #### Introduction
-APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principalement dans les distributions Linux basées sur Debian, comme Ubuntu. Il permet de gérer les paquets logiciels, y compris l'installation, la mise à jour, la suppression et la recherche de paquets. Ce mémo couvre les commandes de base et les fonctionnalités d'APT.
+APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principalement dans les distributions Linux basées sur Debian.
 
 #### Commandes de Base
 
-1. **Mettre à jour la liste des paquets**
+- **Mettre à jour la liste des paquets**
    ```sh
    sudo apt update
    ```
-   Cette commande met à jour la liste des paquets disponibles et leurs versions, mais n'installe ni ne met à jour les paquets.
+   Met à jour la liste des paquets depuis les distants
+  > 🗒️ Notez
+  > `apt update` emmet des requêtes dns pour atteindre les dépôts distants. Il faut donc impérativement configurer une adresse dns.
 
-2. **Mettre à niveau les paquets installés**
+- **Mettre à niveau les paquets installés**
    ```sh
    sudo apt upgrade
    ```
-   Cette commande met à niveau tous les paquets installés vers les versions les plus récentes disponibles.
+   Met à jour tous les paquets installés si une version plus récente est disponible.
 
-3. **Mettre à niveau les paquets avec suppression des paquets obsolètes**
+- **Mettre à niveau les paquets avec suppression des paquets obsolètes**
    ```sh
    sudo apt full-upgrade
    ```
-   Cette commande met à niveau tous les paquets installés et peut supprimer des paquets obsolètes.
+   Met à jour le système en installant/mettant à jour les paquets
 
-4. **Installer un paquet**
+- **Installer un paquet**
    ```sh
    sudo apt install <nom_du_paquet>
    ```
    Remplacez `<nom_du_paquet>` par le nom du paquet que vous souhaitez installer.
 
-5. **Supprimer un paquet**
+- **Supprimer un paquet**
    ```sh
    sudo apt remove <nom_du_paquet>
    ```
-   Cette commande supprime le paquet mais laisse les fichiers de configuration.
+   Supprime le paquet mais conserve les fichiers de configuration.
 
-6. **Supprimer un paquet et ses fichiers de configuration**
+- **Supprimer un paquet et ses fichiers de configuration**
    ```sh
    sudo apt purge <nom_du_paquet>
    ```
-   Cette commande supprime le paquet et tous ses fichiers de configuration.
+   Supprime le paquet et tous ses fichiers de configuration.
 
 7. **Nettoyer les paquets inutilisés**
    ```sh
