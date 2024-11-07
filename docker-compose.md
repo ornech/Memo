@@ -20,8 +20,8 @@ services:
       POSTGRES_PASSWORD: example
       POSTGRES_DB: example
 ```
-
-# Commandes de Base
+---
+### Commandes de Base
 
  - **Démarrer les services**
    ```bash
@@ -43,28 +43,30 @@ services:
   docker-compose logs
    ```
 
-Redémarrer les services
-
+- **Redémarrer les services**
+  ```bash
 docker-compose restart
+```
 
-Construire les images
-
+- **Construire les images**
+```bash
 docker-compose build
+```
+- **Lister les services**
+- ```bash
+  docker-compose ps
+  ```
 
-Lister les services
-
-    docker-compose ps
-
-Variables d'Environnement
+### Variables d'Environnement
 
 Vous pouvez utiliser un fichier .env pour définir des variables d'environnement. Par exemple :
-
+```bash
 POSTGRES_USER=example
 POSTGRES_PASSWORD=example
 POSTGRES_DB=example
-
+```
 Et dans votre docker-compose.yml :
-
+```yaml
 services:
   db:
     image: postgres:latest
@@ -72,11 +74,12 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
-
-Volumes
+```
+---
+### Volumes
 
 Les volumes permettent de persister les données entre les redémarrages des conteneurs.
-
+```yaml
 services:
   db:
     image: postgres:latest
@@ -85,11 +88,12 @@ services:
 
 volumes:
   db_data:
-
-Réseaux
+```
+---
+### Réseaux
 
 Vous pouvez définir des réseaux personnalisés pour isoler les services.
-
+```yaml
 services:
   web:
     image: nginx:latest
@@ -103,7 +107,4 @@ services:
 
 networks:
   my_network:
-
-Conclusion
-
-Docker Compose simplifie la gestion des applications multi-containers en utilisant un fichier de configuration YAML. Il permet de définir, démarrer et arrêter des services de manière cohérente et reproductible. Pour plus d'informations, consultez la documentation officielle de Docker Compose.
+```
