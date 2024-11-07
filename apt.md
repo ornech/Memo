@@ -112,7 +112,8 @@ APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principaleme
    ```bash
    apt-mark showhold
    ```
-Voici un tableau récapitulatif des commandes liées à **APT** (Advanced Package Tool) sous Debian/Ubuntu, ainsi que de leurs fonctions :
+---
+Tableau récapitulatif des commandes liées à **APT** (Advanced Package Tool) sous Debian/Ubuntu, ainsi que de leurs fonctions :
 
 | **Commande**             | **Description**                                                                                                    |
 |--------------------------|--------------------------------------------------------------------------------------------------------------------|
