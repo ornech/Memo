@@ -11,7 +11,7 @@
    ```bash
    git config --list
    ```
----
+___
 
 ### **Démarrer un projet Git**
 1. **Initialiser un dépôt Git** :
