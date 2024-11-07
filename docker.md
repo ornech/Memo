@@ -130,15 +130,15 @@
   ```bash
   docker rm <nom_du_conteneur ou ID>
   ```  
--  **Supprimer tous les conteneurs arrêtés** (sans avoir besoin de spécifier leur nom ou ID):
+-  ⚠️ **Supprimer tous les conteneurs arrêtés** (sans avoir besoin de spécifier leur nom ou ID):
   ```bash
   docker container prune
   ```
-- **Supprimer toutes les images non utilisées :**
+- ⚠️ **Supprimer toutes les images non utilisées :**
   ```bash
   docker image prune
   ```
-- **Supprimer tous les volumes inutilisés :**
+- ⚠️ **Supprimer tous les volumes inutilisés :**
   ```bash
   docker volume prune
   ```
