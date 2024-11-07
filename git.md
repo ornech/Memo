@@ -1,16 +1,5 @@
 # **Git**
 
-### Workflow git
-Un workflow Git est la façon dont une équipe utilise Git pour organiser et gérer son code, les branches et les contributions. Il consiste en une série d'étapes standardisées que les contributeurs suivent tous afin de garantir une collaboration efficace, d'éviter les conflits de code et d'assurer une gestion fluide des versions.
-
-Voci un exemple:  
-→ **git pull**  
-→ **git checkout -a nouvelle_branche**  
-→ **Modification et ajouts de fichiers**  
-→ **git add .**  
-→ **git commit -M "Descritption de ce que j'ai modifié"**  
-→ **git push**
-
 ### **Configuration initiale**
 1. **Configurer votre identité utilisateur** :
    ```bash
@@ -245,7 +234,17 @@ Voci un exemple:
    ```
 
 ---
+### Workflow git
+Un workflow Git est la façon dont une équipe utilise Git pour organiser et gérer son code, les branches et les contributions. Il consiste en une série d'étapes standardisées que les contributeurs suivent tous afin de garantir une collaboration efficace, d'éviter les conflits de code et d'assurer une gestion fluide des versions.
 
+Voci un exemple:  
+→ **git pull**  
+→ **git checkout -a nouvelle_branche**  
+→ **Modification et ajouts de fichiers**  
+→ **git add .**  
+→ **git commit -M "Descritption de ce que j'ai modifié"**  
+→ **git push**
+---
 ### **Notes supplémentaires**
 - **`git pull`** : Cette commande est équivalente à `git fetch` suivi de `git merge`. Elle permet de récupérer les changements distants et de les fusionner avec la branche actuelle.
 - **`git reset --hard`** : Attention ! Cette commande supprime définitivement les changements non validés et ne peut pas être annulée.
