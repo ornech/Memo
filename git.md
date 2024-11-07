@@ -197,7 +197,7 @@
    git checkout -- <fichier>
    ```
 
-4. **Afficher l’historique des commits sous forme de graphe** :
+4. **💯 Afficher l’historique des commits sous forme de graphe** :
    ```bash
    git log --graph --oneline --all
    ```
