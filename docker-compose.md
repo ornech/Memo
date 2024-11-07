@@ -210,7 +210,7 @@ Ici tous les conteneurs connectés au réseau `backend` auront des adresses IP d
 > Docker prend en charge plusieurs pilotes de réseau :
 > - **Bridge** (par défaut) : utilisé pour des réseaux locaux isolés.
 > - **Host** : le conteneur partage le réseau du host, utile pour éviter la latence liée à la translation d'adresses IP. Disponible uniquement sur Linux.
->   - **Overlay** : pour connecter des conteneurs sur différents hôtes dans un cluster Swarm.
+> - **Overlay** : pour connecter des conteneurs sur différents hôtes dans un cluster Swarm.
 >  - **Macvlan** : permet aux conteneurs d'avoir leur propre adresse MAC, utile pour l'intégration avec des réseaux physiques.
 
 Exemple d'utilisation du pilote `host` (principalement pour des tests de performance) :
