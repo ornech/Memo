@@ -50,9 +50,10 @@
   ```bash
   docker build -t <nom_image>:<tag> <chemin_du_dockerfile>
   ```
+  exemple: `docker build -t mon_image:latest /chemin/vers/le/dockerfile`
 - **Lister toutes les images :**
   ```bash
-  docker images
+  docker image ls
   ```
 - **Taguer une image :**
   ```bash
