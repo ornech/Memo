@@ -98,6 +98,9 @@
    ```bash
    git remote add origin <url-du-dépôt>
    ```
+   > `origin` : Est un alias par défaut désignant le dépôt distant principal.
+   > Vous pouvez avoir plusieurs dépôts distants, mais origin sera celui utilisé par défaut lors du clonage ou de l'ajout initial.
+ 
 
 2. **Vérifier les dépôts distants** :
    ```bash
