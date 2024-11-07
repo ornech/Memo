@@ -1,5 +1,11 @@
 # DOCKER
 ---
+### 🎯 **Divers**
+
+- **Gestion des permissions pour Docker :**
+  ```bash
+  sudo usermod -aG docker $USER
+   ```
 
 ### 🚀 **Commandes de Base Docker**
 
@@ -41,6 +47,7 @@
   ```bash
   docker build -t <nom_image>:<tag> <chemin_du_dockerfile>
   ```
+    -t (pseudo-TTY) : Attribue un terminal au conteneur, ce qui rend l'interaction plus intuitive (affichage, gestion de lignes, etc.).
   *Exemple :* `docker build -t my_app:1.0 .`
 - **Lister toutes les images :**
   ```bash
@@ -152,16 +159,24 @@
 
 ---
 
-### 🎯 **Commandes d’Utilisation Avancée**
+## Tableau récapitulatif des options utiles
 
-- **Gestion des permissions pour Docker :**
-  ```bash
-  sudo usermod -aG docker $USER
-  ```
-- **Utilisation de ZAP dans Docker :**
-  ```bash
-  docker run -d ghcr.io/zaproxy/zaproxy:stable
-  ```
-- **Utilisation avec Jenkins et DefectDojo :** voir configurations spécifiques dans les pipelines CI/CD.
+Voici un tableau des options couramment utilisées et intéressantes avec `docker run`, qui vous aideront dans différentes situations :
 
----
+| Option           | Description                                                                                                      | Exemple                                                                                           |
+|------------------|------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| `-d`             | Exécute le conteneur en mode détaché (en arrière-plan).                                                          | `docker run -d <nom_image>`                                                                       |
+| `-it`            | Ouvre un terminal interactif dans le conteneur. Utile pour des sessions de commande.                            | `docker run -it <nom_image> /bin/bash`                                                            |
+| `--name`         | Attribue un nom au conteneur, facilitant son identification.                                                     | `docker run --name mon_conteneur <nom_image>`                                                     |
+| `-p`             | Redirige les ports entre l'hôte et le conteneur, permettant l'accès aux services du conteneur depuis l'extérieur.| `docker run -p 8080:80 <nom_image>`                                                               |
+| `-v`             | Monte un volume entre l'hôte et le conteneur pour persister des données ou partager des fichiers.                | `docker run -v /chemin/local:/chemin/conteneur <nom_image>`                                       |
+| `--rm`           | Supprime automatiquement le conteneur une fois arrêté, idéal pour des conteneurs temporaires.                   | `docker run --rm <nom_image>`                                                                     |
+| `--env` ou `-e`  | Définit une variable d’environnement dans le conteneur, utile pour configurer l'application.                    | `docker run -e "VAR1=value1" <nom_image>`                                                         |
+| `--network`      | Associe le conteneur à un réseau Docker spécifique pour gérer la communication avec d'autres conteneurs.         | `docker run --network mon_reseau <nom_image>`                                                     |
+| `--cpus`         | Limite le nombre de processeurs utilisés par le conteneur, utile pour la gestion des ressources.                 | `docker run --cpus="1.5" <nom_image>`                                                             |
+| `--memory` ou `-m` | Limite la mémoire disponible pour le conteneur pour éviter qu'il consomme trop de RAM.                       | `docker run -m 512m <nom_image>`                                                                  |
+| `--restart`      | Définit une politique de redémarrage automatique pour le conteneur (utile pour les services).                    | `docker run --restart always <nom_image>`                                                         |
+| `--log-driver`   | Configure le driver de journalisation pour le conteneur (json-file, syslog, etc.).                               | `docker run --log-driver syslog <nom_image>`                                                      |
+| `--link`         | Connecte directement deux conteneurs, permettant à l'un d'accéder à l'autre par son nom (moins utilisé).         | `docker run --link conteneur1:alias_conteneur1 <nom_image>`                                       |
+
+Ce tableau résume les options essentielles pour des configurations fréquentes de conteneurs Docker, facilitant la gestion des ressources, la persistance des données, la communication entre conteneurs et le déploiement de services.
