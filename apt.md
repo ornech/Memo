@@ -7,7 +7,7 @@ APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principaleme
 
 - **Mettre à jour la liste des paquets**
    ```sh
-   sudo apt update
+   sudo apt-get update
    ```
    Met à jour la liste des paquets depuis les distants
   > 🗒️ Notez
@@ -15,25 +15,25 @@ APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principaleme
 
 - **Mettre à niveau les paquets installés**
    ```sh
-   sudo apt upgrade
+   sudo apt-get upgrade
    ```
    Met à jour tous les paquets installés si une version plus récente est disponible.
 
 - **Mettre à niveau les paquets avec suppression des paquets obsolètes**
    ```sh
-   sudo apt full-upgrade
+   sudo apt-get full-upgrade
    ```
    Met à jour le système en installant/mettant à jour les paquets
 
 - **Installer un paquet**
    ```sh
-   sudo apt install <nom_du_paquet>
+   sudo apt-get install <nom_du_paquet>
    ```
    Remplacez `<nom_du_paquet>` par le nom du paquet que vous souhaitez installer.
 
 - **Supprimer un paquet**
    ```sh
-   sudo apt remove <nom_du_paquet>
+   sudo apt-get remove <nom_du_paquet>
    ```
    Supprime le paquet mais conserve les fichiers de configuration.
 
@@ -59,51 +59,76 @@ APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principaleme
    ```sh
    apt search <mot_clé>
    ```
-   Cette commande recherche les paquets contenant le mot-clé spécifié.
+   Recherche les paquets contenant le mot-clé spécifié.
 
-10. **Afficher des informations sur un paquet**
+- **Afficher des informations sur un paquet**
     ```sh
     apt show <nom_du_paquet>
     ```
-    Cette commande affiche des informations détaillées sur le paquet spécifié.
+    Affiche des informations disponibles sur le paquet spécifié.
 
 #### Gestion des Dépôts
 
-1. **Ajouter un dépôt**
+- **Ajouter un dépôt**
    ```sh
-   sudo add-apt-repository <dépôt>
+   add-apt-repository <dépôt>
    ```
-   Remplacez `<dépôt>` par l'URL ou le nom du dépôt que vous souhaitez ajouter.
+   Remplacez `<dépôt>` par l'URL ou le nom du dépôt a ajouter.
 
-2. **Supprimer un dépôt**
+- **Supprimer un dépôt**
    ```sh
-   sudo add-apt-repository --remove <dépôt>
+   add-apt-repository --remove <dépôt>
    ```
-   Remplacez `<dépôt>` par l'URL ou le nom du dépôt que vous souhaitez supprimer.
+   Remplacez `<dépôt>` par l'URL ou le nom du dépôt a supprimer.
 
-3. **Lister les dépôts**
-   ```sh
+- **Lister les dépôts**
+   ```bash
    cat /etc/apt/sources.list
    cat /etc/apt/sources.list.d/*
    ```
-   Ces commandes affichent les dépôts configurés dans les fichiers `sources.list` et `sources.list.d`.
+   Affichent les dépôts configurés dans les fichiers `sources.list` et `sources.list.d`.
 
 #### Options Utiles
 
-1. **Simuler une commande sans l'exécuter**
-   ```sh
-   sudo apt -s <commande>
+- **Résoudre les problèmes de dépendances**
+   ```bash
+   apt --fix-broken install
    ```
-   Remplacez `<commande>` par la commande que vous souhaitez simuler (par exemple, `install`, `upgrade`, etc.).
+   Permet de résoudre les problèmes de dépendances manquantes ou d'installation incomplète.
 
-2. **Forcer la réinstallation d'un paquet**
-   ```sh
+- **Forcer la réinstallation d'un paquet**
+   ```bash
    sudo apt --reinstall install <nom_du_paquet>
    ```
-   Cette commande réinstalle le paquet spécifié.
+   Réinstalle le paquet spécifié.
 
-3. **Afficher les paquets obsolètes**
-   ```sh
-   apt list --upgradable
+- **Bloquer la mise à jour automatique**
+   ```bash
+   apt-mark hold <nom_du_paquet>
    ```
-   Cette commande affiche les paquets qui peuvent être mis à niveau.
+   Empêche la mise à jour automatique d'un paquet lors d'un `apt upgrade`. Utilisez `apt-mark unhold <nom_du_paquet>` pour réactiver la mise à jour automatique d'un paquet.
+
+- **Lister les paquets marqués "hold"**
+   ```bash
+   apt-mark showhold
+   ```
+Voici un tableau récapitulatif des commandes liées à **APT** (Advanced Package Tool) sous Debian/Ubuntu, ainsi que de leurs fonctions :
+
+| **Commande**             | **Description**                                                                                                    |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------|
+| **`apt`**                 | Interface utilisateur simplifiée pour gérer les paquets : installation, mise à jour, suppression, etc.             |
+| **`apt-cdrom`**           | Permet d'ajouter un CD-ROM comme source de paquets pour `APT`. Utilisé pour les systèmes sans connexion Internet.   |
+| **`aptdcon`**             | Outil graphique pour gérer les paquets en ligne de commande à partir de `APT`. C'est une interface pour `apt` en mode console. |
+| **`apt-get`**             | Outil de gestion des paquets en ligne de commande, plus ancien que `apt`. Il permet d'installer, de mettre à jour, et de gérer les paquets. |
+| **`apt-sortpkgs`**        | Trie les paquets `.deb` téléchargés, ce qui peut être utile pour l'archivage ou la gestion des paquets localement.  |
+| **`apt-add-repository`**  | Permet d'ajouter des dépôts supplémentaires à la liste de sources de `APT` (par exemple, des PPA pour Ubuntu).        |
+| **`apt-config`**          | Utilitaire pour afficher ou modifier la configuration d'APT. Permet d'examiner les paramètres d'APT.                |
+| **`apt-extracttemplates`**| Utilisé pour extraire des modèles de configuration à partir de paquets `.deb` pour les personnaliser.                |
+| **`apt-key`**             | Outil pour gérer les clés GPG utilisées pour vérifier les paquets des dépôts.                                      |
+| **`apt-cache`**           | Permet de manipuler le cache des paquets. Utilisé pour rechercher des paquets, afficher des informations sur les paquets, etc. |
+| **`aptd`**                | Démon de gestion des paquets utilisé dans certaines interfaces graphiques comme `aptitude` ou `synaptic`.            |
+| **`apt-ftparchive`**      | Génère des archives de paquets pour un dépôt local. Utilisé pour créer des dépôts de paquets à partir de fichiers `.deb`. |
+| **`apt-mark`**            | Permet de marquer un paquet pour qu'il soit "en hold" (ne pas être mis à jour) ou pour d'autres manipulations d'état des paquets. |
+
+
+  
