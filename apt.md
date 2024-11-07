@@ -3,8 +3,6 @@
 #### Introduction
 APT (Advanced Package Tool) est un gestionnaire de paquets utilisé principalement dans les distributions Linux basées sur Debian.
 
-#### Commandes de Base
-
 - **Mettre à jour la liste des paquets**
    ```sh
    sudo apt-get update
