@@ -1,6 +1,8 @@
-# 🐳 DOCKER
+#  DOCKER
 
-### 🎯 **Problêmes divers**
+### 🔧 **Problêmes divers**
+- **Installation**
+ https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 
 - **Gestion des permissions pour Docker :**
   Si erreur `dial unix /var/run/docker.sock: connect: permission denied`
@@ -64,7 +66,7 @@
   ```
 ---
 
-### 🏃 **Exécution et Gestion des Conteneurs**
+### 🐳 **Exécution et Gestion des Conteneurs**
 
 - **Lancer un conteneur en mode interactif :**
   ```bash
@@ -82,7 +84,7 @@
 
 ---
 
-### 🔧 **Volumes et Persistance de Données**
+### 💾 **Volumes et Persistance de Données**
 
 - **Créer un volume :**
   ```bash
@@ -96,7 +98,7 @@
 
 ---
 
-### 🔍 **Gestion des Réseaux**
+### 🌍 **Gestion des Réseaux**
 
 - **Lister les réseaux Docker :**
   ```bash
@@ -155,7 +157,7 @@
 
 ---
 
-### 🐳 **Nettoyage Docker**
+### 🧹 **Nettoyage Docker**
 
 - **Supprimer tous les conteneurs inactifs :**
   ```bash
