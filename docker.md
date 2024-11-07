@@ -139,22 +139,6 @@
   ```bash
   docker-compose up -d --force-recreate <nom_du_service>
   ```
-
----
-
-### ⚙️ **Volumes et Permissions pour Jenkins avec Docker**
-
-- **Volumes pour Jenkins avec Docker Compose :**
-  ```yaml
-  services:
-    jenkins:
-      volumes:
-        - /srv/data/jenkins_data:/var/jenkins_home
-        - /srv/data/jenkins:/var/jenkins_config
-      group_add:
-        - $(getent group docker | cut -d: -f3)
-  ```
-
 ---
 
 ### 🧹 **Nettoyage Docker**
