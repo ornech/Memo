@@ -117,12 +117,24 @@
   >  * `bridge` : Réseau par défaut pour les conteneurs avec isolation  
   >  * `host` : Les conteneurs partagent directement le réseau de l'hôte, sans isolation  
   >  * `none` : Aucune configuration réseau (pas d'accès réseau)  
-
   
 - **Mapper un port:** 
   ```bash
   docker run -d -p <port_local>:<port_du_conteneur> nginx
   ```
+- **Créer un réseau utilisateur avec sous-réseau :**
+   ```bash
+   docker network create --subnet=10.10.36.0/24 <nom_du_reseau>
+   ```
+
+- **Attribuer une IP fixe lors du lancement du conteneur :**
+   ```bash
+   docker run -d --name <nom_du_conteneur> --network <nom_du_reseau> --ip 10.10.36.122 <nom_image>
+   ```
+
+- **Attribuer une IP fixe à un conteneur existant :**
+   ```bash
+   docker network connect --ip 10.10.36.122 <nom_du_reseau> <nom_du_conteneur>
 ---
 
 ### 🧹 **Nettoyage Docker**
