@@ -110,14 +110,13 @@
   ```bash
   docker network connect <nom_du_réseau> <nom_du_conteneur>
   ```
-  > ℹ️ Infor
-  > Réseaux Docker par défaut
-  > `bridge` : Réseau par défaut pour les conteneurs, permettant la communication entre eux via leur adresse IP, avec isolation de base  
-  > `host` : Les conteneurs partagent directement le réseau de l'hôte, sans isolation, utile pour les applications nécessitant un accès direct au réseau.  
-  > `none` : Aucune configuration réseau, les conteneurs sont complètement isolés sans accès réseau.  
+  > ℹ️ **Réseaux Docker par défaut**  
+  >  * `bridge` : Réseau par défaut pour les conteneurs avec isolation  
+  >  * `host` : Les conteneurs partagent directement le réseau de l'hôte, sans isolation  
+  >  * `none` : Aucune configuration réseau (pas d'accès réseau)  
 
   
-- **Mapper un port: ** 
+- **Mapper un port:** 
   ```bash
   docker run -d -p <port_local>:<port_du_conteneur> nginx
   ```
