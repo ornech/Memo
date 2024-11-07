@@ -33,20 +33,23 @@
    git status
    ```
 
-2. **Ajouter des fichiers à l'index** (préparation à l'engagement) :
+2. **Ajoute un fichier à la staging area** :
    - Ajouter un fichier spécifique :
      ```bash
      git add <fichier>
      ```
-   - Ajouter tous les fichiers modifiés :
+   - Ajouter tous les fichiers :
      ```bash
      git add .
      ```
+     > Lorsque vous exécutez `git add`, vous indiquez à Git que le fichier est prêt à être ajouter à la prochaine validation (commit). Cela signifie que toutes les modifications (ajouts, suppressions, modifications) effectuées sur ce fichier seront inclus dans le prochain commit.
+     > Note: seul les fichiers mentionnés dans la stagging area sont intégrés à la prochaine validation (commit).
 
-3. **Engager (commit) les changements** :
+3. **Validation des changements (commit)** :
    ```bash
    git commit -m "Message de commit"
    ```
+   > Un commit dans Git est une photo instantanée de l'état de votre projet à un instant "t". C'est une opération clé dans l'historique d'un dépôt Git, car chaque commit représente un enregistrement permanent et versionné des changements apportés au code ou aux fichiers du projet.
 
 4. **Annuler un ajout avant le commit** (réinitialiser un fichier à son état précédent) :
    ```bash
@@ -187,12 +190,12 @@
    git log <fichier>
    ```
 
-2. **Supprimer un fichier du contrôle de version** (sans le supprimer du disque) :
+2. **Désactive le suivi de version pour un fichier** (sans le supprimer du disque) :
    ```bash
    git rm --cached <fichier>
    ```
 
-3. **Réinitialiser les fichiers à l’état du dernier commit** (annuler toutes les modifications locales) :
+3. **Restaure les fichiers tels qu'ils étaientt au dernier commit** (annuler toutes les modifications) :
    ```bash
    git checkout -- <fichier>
    ```
