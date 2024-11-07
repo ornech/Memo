@@ -1,5 +1,5 @@
 # 🐳 DOCKER
----
+
 ### 🎯 **Problêmes divers**
 
 - **Gestion des permissions pour Docker :**
@@ -11,6 +11,8 @@
   ```bash
   docker logs <nom_conteneur>
    ```
+---
+
 ### 🚀 **Commandes de Base Docker**
 
 - **Lister les conteneurs actifs :**
@@ -46,8 +48,6 @@
   ```bash
   docker build -t <nom_image>:<tag> <chemin_du_dockerfile>
   ```
-    -t (pseudo-TTY) : Attribue un terminal au conteneur, ce qui rend l'interaction plus intuitive (affichage, gestion de lignes, etc.).
-  *Exemple :* `docker build -t my_app:1.0 .`
 - **Lister toutes les images :**
   ```bash
   docker images
@@ -112,9 +112,9 @@
   ```
   > ℹ️ Infor
   > Réseaux Docker par défaut
-  > `bridge` : Réseau par défaut pour les conteneurs, permettant la communication entre eux via leur adresse IP, avec isolation de base
-  > `host` : Les conteneurs partagent directement le réseau de l'hôte, sans isolation, utile pour les applications nécessitant un accès direct au réseau.
-  > `none` : Aucune configuration réseau, les conteneurs sont complètement isolés sans accès réseau.
+  > `bridge` : Réseau par défaut pour les conteneurs, permettant la communication entre eux via leur adresse IP, avec isolation de base  
+  > `host` : Les conteneurs partagent directement le réseau de l'hôte, sans isolation, utile pour les applications nécessitant un accès direct au réseau.  
+  > `none` : Aucune configuration réseau, les conteneurs sont complètement isolés sans accès réseau.  
 
   
 - **Mapper un port: ** 
