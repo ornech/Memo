@@ -27,7 +27,7 @@ ___
 
 ---
 
-### **Travailler avec les fichiers**
+### **Gestion des fichiers**
 1. **Vérifier l'état des fichiers** (modifications locales, fichiers suivis ou non suivis) :
    ```bash
    git status
