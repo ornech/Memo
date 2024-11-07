@@ -128,7 +128,7 @@ ___
 ---
 
 ### **Gestion des modifications**
-1. **Afficher les différences non validées** (entre le fichier modifié et l'index) :
+1. **Afficher les différences non validées** (entre le fichier modifié et la stagging area) :
    ```bash
    git diff
    ```
