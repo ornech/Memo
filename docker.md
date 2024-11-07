@@ -122,28 +122,15 @@
   ```bash
   docker run -d -p <port_local>:<port_du_conteneur> nginx
   ```
-
----
-
-### 📋 **Compose et Automatisation (Docker Compose)**
-
-- **Lancer tous les services dans un fichier `docker-compose.yml` :**
-  ```bash
-  docker-compose up -d
-  ```
-- **Arrêter tous les services d’un `docker-compose.yml` :**
-  ```bash
-  docker-compose down
-  ```
-- **Recréer un service spécifié :**
-  ```bash
-  docker-compose up -d --force-recreate <nom_du_service>
-  ```
 ---
 
 ### 🧹 **Nettoyage Docker**
 
-- **Supprimer tous les conteneurs inactifs :**
+- **Supprime un conteneur:**
+  ```bash
+  docker rm <nom_du_conteneur ou ID>
+  ```  
+-  **Supprimer tous les conteneurs arrêtés** (sans avoir besoin de spécifier leur nom ou ID):
   ```bash
   docker container prune
   ```
