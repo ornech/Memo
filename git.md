@@ -1,5 +1,17 @@
 # **Git**
 
+
+```mermaid
+graph LR;
+    A[Git pull] --> B[Create a new branch]
+    B --> C[Modify files]
+    C --> D[git add .]
+    D --> E[git commit]
+    E --> F[git push]
+```
+
+
+
 ### **Configuration initiale**
 1. **Configurer votre identité utilisateur** :
    ```bash
@@ -11,7 +23,6 @@
    ```bash
    git config --list
    ```
-
 ---
 
 ### **Démarrer un projet Git**
@@ -19,6 +30,7 @@
    ```bash
    git init
    ```
+    > La commande `git init` initialise le suivi de version dans le répertoire courant. Un répertoire caché .git sera créé, il servira a stocker toutes les informations de suivi de version pour de ce répertoire.
 
 2. **Cloner un dépôt distant** :
    ```bash
