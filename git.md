@@ -1,5 +1,6 @@
 # **Git**
 
+
 ## **Configuration initiale**
 1. **Configurer votre identité utilisateur** :
    ```bash
@@ -12,6 +13,7 @@
    git config --list
    ```
 
+
 ## **Démarrer un projet Git**
 1. **Initialiser un dépôt Git** :
    ```bash
@@ -23,6 +25,7 @@
    ```bash
    git clone <url-du-dépôt>
    ```
+
 
 ## **Gestion des identifiants (credentials)** 
 Permettent de stocker les identifiants et token nécessaires à la connexion à un dépôt distant (par exemple GitHub).
@@ -37,23 +40,23 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    - Stocke les identifiants **en mémoire** pour une durée limitée (par défaut 15 minutes, configurable).
      ```bash
      git config --global credential.helper cache
-   ```
-   Stoker dans le cache les identifiants et le token pendant 1 heure (soit 3600s)
-   ```bash
+     ```
+   - Stoker dans le cache les identifiants et le token pendant 1 heure (soit 3600s).
+     ```bash
      git config --global credential.helper "cache --timeout=3600"
-   ```
+     ```
    
 3. **Stockage en clair (`store`)** ⛔:  
    - Stocke les identifiants ⛔ **en clair** ⛔ dans un fichier texte (`~/.git-credentials`).
    ```bash
      git config --global credential.helper store`
    ```
-> ℹ️ **Enregistrement des identifiants et tokens**
+> ℹ️ **Comment enregistrer mes identifiants et tokens**
 >  - Faite une commande git qui nécessite une authentification (`git pull origin`)
 >  - Renseignez votre identifiant et votre token
->  - Il a été sauvegardé à la première connexion si vous avez renseigné `git config --global credential.helper <Votre_manager>`
+>  - Il a été sauvegardé à la première connexion si vous avez correctement renseigné `git config --global credential.helper <option>`
 >  - Relancez une commande qui nécessite un authentification, aucune authnetification ne doit vous être demandé.
-> 
+
 
 ## **Gestion des fichiers**
 1. **Vérifier l'état des fichiers** (modifications locales, fichiers suivis ou non suivis) :
@@ -84,6 +87,7 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    ```bash
    git reset <fichier>
    ```
+
 
 ## **Branches**
 1. **Lister les branches locales** :
@@ -268,8 +272,8 @@ Voci un exemple:
 → **git commit -M "Descritption de ce que j'ai modifié"**  
 → **git push**
 
----
 
-### **Notes supplémentaires**
+
+## **Notes supplémentaires**
 - **`git pull`** : Cette commande est équivalente à `git fetch` suivi de `git merge`. Elle permet de récupérer les changements distants et de les fusionner avec la branche actuelle.
 - **`git reset --hard`** : Attention ! Cette commande supprime définitivement les changements non validés et ne peut pas être annulée.
