@@ -39,4 +39,3 @@ Pour plus d'informations sur la contribution, lisez le guide [Contributing to Op
 ## Licence
 
 Ce projet est sous licence Libre. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-```
