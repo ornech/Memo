@@ -76,3 +76,38 @@ Active l'interface VLAN `eth0.10`.
 ip link set eth0.10 down
 ```
 Désactive l'interface VLAN `eth0.10`.
+
+## Espace de nom réseau (Netwok namespace)
+Un espace de noms réseau (ou network namespace) sous Linux est une fonctionnalité qui permet d'isoler les ressources réseau (interfaces, tables de routage, ports, etc.) pour des groupes de processus. Chaque espace de noms réseau possède sa propre pile réseau indépendante, ce qui signifie que les processus dans cet espace voient uniquement les interfaces réseau et configurations qui y sont associées.
+
+ - Ajouter un espace de nom réseau
+   ```bash
+   ip netns add <nom>
+   ```
+
+ - Pour affichez vos espaces de nom réseau
+   ```bash
+   ip netns show
+   ```
+
+   Vous les trouverez également dans le dossier `/var/run/netns`.
+
+ - Ajouter une interface réseau à un netspace  
+   
+    1) Création d'une interface virtuelle.
+    
+    ```bash
+    ip link add <veth_1_1> type veth peer name <veth_1_2>
+    ```
+    > Les interfaces virtuelles fonctionnent par paire interconnectées (`veth_1_1` et `veth_1_2`) afin de former une sorte de tunnel entre des espaces de nom réseau. Ce qui entre d’un côté, ressort de l’autre. Pour plus d’informations: [lien](https://man7.org/linux/man-pages/man4/veth.4.html). 
+    2) Associer une extrémité d'une interface virtuelle à un espace de nom réseau
+    ```bash
+    ip link add <veth_1_2> type veth peer name <netspace>
+    ```
+
+- Exécuter un processus dans un espace de nom réseau
+  ```bash
+  ip netns exec <netspace> <app>
+  ```
+
+  **exemple:** `ip netns exec netspace1 bash`, ici nous lancons le shell bash dans l'espace de nom réseau isolé `netspace1`, où toutes les commandes n'accéderont qu'aux interfaces et configurations réseau propres à cet espace de nom.
