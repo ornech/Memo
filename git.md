@@ -12,6 +12,21 @@
    git config --list
    ```
 
+___
+
+### **Démarrer un projet Git**
+1. **Initialiser un dépôt Git** :
+   ```bash
+   git init
+   ```
+    > La commande `git init` initialise le suivi de version dans le répertoire courant. Un répertoire caché .git sera créé, il servira a stocker toutes les informations de suivi de version pour de ce répertoire.
+
+2. **Cloner un dépôt distant** :
+   ```bash
+   git clone <url-du-dépôt>
+   ```
+---
+
 ### **Gestion des identifiants (credentials)** 
 Permettent de stocker les identifiants et token nécessaires à la connexion à un dépôt distant (par exemple GitHub).
 
@@ -42,21 +57,6 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
 >  - Il a été sauvegardé à la première connexion si vous avez renseigné `git config --global credential.helper <Votre_manager>`
 >  - Relancez une commande qui nécessite un authentification, aucune authnetification ne doit vous être demandé.
 > 
-___
-
-### **Démarrer un projet Git**
-1. **Initialiser un dépôt Git** :
-   ```bash
-   git init
-   ```
-    > La commande `git init` initialise le suivi de version dans le répertoire courant. Un répertoire caché .git sera créé, il servira a stocker toutes les informations de suivi de version pour de ce répertoire.
-
-2. **Cloner un dépôt distant** :
-   ```bash
-   git clone <url-du-dépôt>
-   ```
-
----
 
 ### **Gestion des fichiers**
 1. **Vérifier l'état des fichiers** (modifications locales, fichiers suivis ou non suivis) :
