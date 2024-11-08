@@ -1,31 +1,23 @@
 # MEMO
 
-1. [Filesystem Hierarchy Standard (FHS).md](./Filesystem%20Hierarchy%20Standard%20(FHS).md)  
-   Décrit la structure standard des systèmes de fichiers sous Linux.
+1. [Filesystem Hierarchy Standard (FHS).md](./Filesystem%20Hierarchy%20Standard%20(FHS).md) Décrit la structure standard des systèmes de fichiers sous Linux.
 
-2. [apt.md](./apt.md)  
-   Guide sur l'utilisation d'`apt`, le gestionnaire de paquets des distributions basées sur Debian.
+2. [apt.md](./apt.md) Guide sur le gestionnaire de paquets des distributions basées sur Debian.
 
-3. [cron.md](./cron.md)  
-   Introduction à `cron` pour la planification des tâches automatisées.
+3. [cron.md](./cron.md) Introduction à la planification des tâches avec cron.
 
-4. [docker.md](./docker.md)  
-   Documentation sur les commandes Docker pour gérer les conteneurs et images.
+4. [docker.md](./docker.md) Aide mémoire Docker.
 
-5. [docker-compose.md](./docker-compose.md)  
-   Explications sur `docker-compose` pour la gestion des environnements multi-conteneurs.
+5. [docker-compose.md](./docker-compose.md) Aide mémoire pour la gestion des environnements multi-conteneurs.
 
-6. [git.md](./git.md)  
-   Commandes essentielles pour l'utilisation de Git, le système de contrôle de versions.
+6. [git.md](./git.md) Aide mémoire Git, le système de contrôle de versions.
 
-7. [ip.md](./ip.md)  
-   Guide sur les commandes `ip` pour la configuration des réseaux sous Linux.
+7. [ip.md](./ip.md) Guide sur les commandes `ip` pour la configuration des réseaux sous Linux.
 
-8. [tar.md](./tar.md)  
-   Introduction à `tar` pour archiver et compresser des fichiers.
+8. [tar.md](./tar.md) Introduction à `tar`.
 
-9. [vi.md](./vi.md)  
-   Commandes de base pour utiliser l'éditeur de texte `vi`/`vim`.
+9. [vi.md](./vi.md) Aide mémoire sur éditeur de texte `vi`/`vim`.
+   
 ## Contribuer
 
 Les contributions pour améliorer et ajouter des fonctionnalités sont les bienvenues ! Suivez ces étapes pour contribuer :
