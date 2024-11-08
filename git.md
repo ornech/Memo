@@ -37,9 +37,9 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
      git config --global credential.helper store`
    ```
 > ℹ️ **Enregistrement des identifiants et tokens**
->  - faite une commande git qui nécessite une authentification
+>  - Faite une commande git qui nécessite une authentification (`git pull origin`)
 >  - Renseignez votre identifiant et votre token
->  - Il est maintenant sauvegardé
+>  - Il a été sauvegardé à la première connexion si vous avez renseigné `git config --global credential.helper <Votre_manager>`
 >  - Relancez une commande qui nécessite un authentification, aucune authnetification ne doit vous être demandé.
 > 
 ___
