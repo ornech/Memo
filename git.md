@@ -23,6 +23,10 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
 
 2. **Cache temporaire (`cache`)** ⚠️:  
    - Stocke les identifiants **en mémoire** pour une durée limitée (par défaut 15 minutes, configurable).
+     ```bash
+     git config --global credential.helper cache
+   ```
+   Stoker dans le cache les identifiants et le token pendant 1 heure (soit 3600s)
    ```bash
      git config --global credential.helper "cache --timeout=3600"
    ```
