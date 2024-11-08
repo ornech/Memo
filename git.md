@@ -73,8 +73,9 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
      ```bash
      git add .
      ```
-     > Lorsque vous exécutez `git add`, vous indiquez à Git que le fichier est prêt à être ajouter à la prochaine validation (commit). Cela signifie que toutes les modifications (ajouts, suppressions, modifications) effectuées sur ce fichier seront inclus dans le prochain commit.
-     > Note: seul les fichiers mentionnés dans la stagging area sont intégrés à la prochaine validation (commit).
+     > 🗒️ 1) Lorsque vous exécutez `git add`, vous indiquez à Git que le fichier est prêt à être ajouter à la prochaine validation (commit). Cela signifie que toutes les modifications (ajouts, suppressions, modifications) effectuées sur ce fichier seront inclus dans le prochain commit.
+     
+     > 🗒️ 2) seul les fichiers mentionnés dans la stagging area sont intégrés à la prochaine validation (commit).
 
 3. **Validation des changements (commit)** :
    ```bash
@@ -87,9 +88,7 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    git reset <fichier>
    ```
 
----
-
-### **Branches**
+## **Branches**
 1. **Lister les branches locales** :
    ```bash
    git branch
@@ -125,9 +124,8 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
      git push origin --delete <nom-de-branche>
      ```
 
----
 
-### **Travailler avec un dépôt distant**
+## **Travailler avec un dépôt distant**
 1. **Ajouter un dépôt distant** :
    ```bash
    git remote add origin <url-du-dépôt>
@@ -156,9 +154,8 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    git fetch origin
    ```
 
----
 
-### **Gestion des modifications**
+## **Gestion des modifications**
 1. **Afficher les différences non validées** (entre le fichier modifié et la stagging area) :
    ```bash
    git diff
@@ -213,9 +210,8 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
      git add <fichier-conflit>
      ```
 
----
 
-### **Autres commandes utiles**
+## **Autres commandes utiles**
 1. **Afficher l'historique des modifications pour un fichier spécifique** :
    ```bash
    git log <fichier>
@@ -236,9 +232,8 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    git log --graph --oneline --all
    ```
 
----
 
-### **Gestion des tags**
+## **Gestion des tags**
 1. **Lister les tags** :
    ```bash
    git tag
@@ -264,8 +259,8 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    git push origin --delete <nom-du-tag>
    ```
 
----
-### Workflow git
+
+## Workflow git
 Un workflow Git est la façon dont une équipe utilise Git pour organiser et gérer son code, les branches et les contributions. Il consiste en une série d'étapes standardisées que les contributeurs suivent tous afin de garantir une collaboration efficace, d'éviter les conflits de code et d'assurer une gestion fluide des versions.
 
 Voci un exemple:  
