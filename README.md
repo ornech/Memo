@@ -1,24 +1,31 @@
-Le projet contient plusieurs fichiers markdown destinés à documenter différentes commandes et concepts essentiels en ligne de commande sous Linux et d'autres environnements. Voici un aperçu des fichiers disponibles dans le dépôt :
+# MEMO
 
-- **`Filesystem Hierarchy Standard (FHS).md`** : Décrit la norme FHS qui organise les répertoires et fichiers du système de fichiers Linux, expliquant l'objectif des répertoires `/bin`, `/etc`, `/var`, etc.
+1. [Filesystem Hierarchy Standard (FHS).md](./Filesystem%20Hierarchy%20Standard%20(FHS).md)  
+   Décrit la structure standard des systèmes de fichiers sous Linux.
 
-- **`README.md`** : Le fichier d'accueil du dépôt. Il fournit une vue d'ensemble du projet, des fonctionnalités et de la façon de l'utiliser.
+2. [apt.md](./apt.md)  
+   Guide sur l'utilisation d'`apt`, le gestionnaire de paquets des distributions basées sur Debian.
 
-- **`apt.md`** : Documente les commandes pour `apt`, le gestionnaire de paquets sur les distributions basées sur Debian. Inclut des informations sur l'installation, la mise à jour et la gestion des paquets.
+3. [cron.md](./cron.md)  
+   Introduction à `cron` pour la planification des tâches automatisées.
 
-- **`cron.md`** : Expose les bases de `cron`, l'outil de planification de tâches sous Unix/Linux, pour exécuter des commandes ou scripts à des intervalles réguliers.
+4. [docker.md](./docker.md)  
+   Documentation sur les commandes Docker pour gérer les conteneurs et images.
 
-- **`docker.md`** et **`docker-compose.md`** : Couvre des commandes et configurations pour `docker` et `docker-compose`, expliquant comment gérer des conteneurs, des images et des configurations multi-conteneurs.
+5. [docker-compose.md](./docker-compose.md)  
+   Explications sur `docker-compose` pour la gestion des environnements multi-conteneurs.
 
-- **`git.md`** : Documente des commandes Git essentielles, y compris les commandes pour le suivi de versions, les branchements et la gestion des dépôts.
+6. [git.md](./git.md)  
+   Commandes essentielles pour l'utilisation de Git, le système de contrôle de versions.
 
-- **`ip.md`** : Contient des informations sur les commandes `ip`, qui gère la configuration réseau sur les systèmes Linux, notamment pour la configuration d'adresses IP, de routes, et d'espaces réseau.
+7. [ip.md](./ip.md)  
+   Guide sur les commandes `ip` pour la configuration des réseaux sous Linux.
 
-- **`tar.md`** : Introduction aux commandes `tar`, utilisées pour archiver et compresser des fichiers sous Linux.
+8. [tar.md](./tar.md)  
+   Introduction à `tar` pour archiver et compresser des fichiers.
 
-- **`vi.md`** : Guide de base sur l'éditeur de texte `vi`/`vim`, couvrant les commandes essentielles pour la navigation et l'édition de texte.
-
-
+9. [vi.md](./vi.md)  
+   Commandes de base pour utiliser l'éditeur de texte `vi`/`vim`.
 ## Contribuer
 
 Les contributions pour améliorer et ajouter des fonctionnalités sont les bienvenues ! Suivez ces étapes pour contribuer :
