@@ -110,10 +110,10 @@ Un espace de noms réseau (ou network namespace) sous Linux est une fonctionnali
     > Les interfaces virtuelles fonctionnent par paire interconnectées (`veth_1_1` et `veth_1_2`) afin de former une sorte de tunnel entre des espaces de nom réseau. Ce qui entre d’un côté, ressort de l’autre. Pour plus d’informations: [lien](https://man7.org/linux/man-pages/man4/veth.4.html). 
     2) Associer une extrémité d'une interface virtuelle à un espace de nom réseau
     ```bash
-    ip link add <veth_1_1> type veth peer name <netspace1>
-    ip link add <veth_1_2> type veth peer name <netspace2>
+    ip link add <veth_1_1> type veth peer name netspace1
+    ip link add <veth_1_2> type veth peer name netspace2
     ```
-    Ici nous avon interconnecté les espaces de nom <netspace1> et <netspace2>.  
+    Ici nous avon interconnecté les espaces de nom `netspace1` et `netspace2`.  
 
 - Exécuter un processus dans un espace de nom réseau
   ```bash
