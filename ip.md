@@ -54,6 +54,10 @@ ip route add 192.168.2.0/24 via 192.168.1.1
 ```
 Ajoute une route pour atteindre le réseau `192.168.2.0/24` via la passerelle `192.168.1.1`.
 
+#### AJouter une route par défaut
+```bash
+ip route add default via <IP_PASSERELLE>
+```
 
 ## Gestion des VLAN
 
