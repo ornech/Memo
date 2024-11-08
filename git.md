@@ -36,6 +36,12 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    ```bash
      git config --global credential.helper store`
    ```
+> ℹ️ **Enregistrement des identifiants et tokens**
+>  - faite une commande git qui nécessite une authentification
+>  - Renseignez votre identifiant et votre token
+>  - Il est maintenant sauvegardé
+>  - Relancez une commande qui nécessite un authentification, aucune authnetification ne doit vous être demandé.
+> 
 ___
 
 ### **Démarrer un projet Git**
