@@ -157,17 +157,17 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
 
 
 ## **Gestion des modifications**
-1. **Afficher les différences non validées** (entre le fichier modifié et la stagging area) :
+- **Afficher les différences non validées** (entre le fichier modifié et la stagging area) :
    ```bash
    git diff
    ```
 
-2. **Afficher les différences entre deux commits** :
+- **Afficher les différences entre deux commits** :
    ```bash
    git diff <commit1> <commit2>
    ```
 
-3. **Afficher l’historique des commits** :
+- **Afficher l’historique des commits** :
    ```bash
    git log
    ```
@@ -176,41 +176,25 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
      git log --oneline
      ```
 
-4. **Annuler un commit local avant qu’il ne soit poussé** (réinitialiser le HEAD) :
+- **Annuler un commit local avant qu’il ne soit poussé** (réinitialiser le HEAD) :
    ```bash
    git reset --hard <commit-id>
    ```
 
-5. **Modifier le dernier commit (ajouter des modifications ou modifier le message)** :
+- **Modifier le dernier commit (ajouter des modifications ou modifier le message)** :
    ```bash
    git commit --amend
    ```
-
----
-
-### **Travail collaboratif**
-1. **Stasher (mettre de côté) des changements non validés** (utile avant de changer de branche) :
+   
+- **Stasher (mettre de côté) des changements non validés** (utile avant de changer de branche) :
    ```bash
    git stash
    ```
 
-2. **Récupérer des changements précédemment mis de côté** :
+- **Récupérer des changements précédemment mis de côté** :
    ```bash
    git stash pop
    ```
-
-3. **Fusionner les branches sans enregistrer immédiatement** (mode "Rebase") :
-   ```bash
-   git rebase <branche-à-fusionner>
-   ```
-
-4. **Résoudre les conflits de fusion** :
-   - Modifier les fichiers conflictuels manuellement.
-   - Marquer les conflits comme résolus :
-     ```bash
-     git add <fichier-conflit>
-     ```
-
 
 ## **Autres commandes utiles**
 1. **Afficher l'historique des modifications pour un fichier spécifique** :
@@ -277,3 +261,15 @@ Voci un exemple:
 ## **Notes supplémentaires**
 - **`git pull`** : Cette commande est équivalente à `git fetch` suivi de `git merge`. Elle permet de récupérer les changements distants et de les fusionner avec la branche actuelle.
 - **`git reset --hard`** : Attention ! Cette commande supprime définitivement les changements non validés et ne peut pas être annulée.
+- **Réécrire l'historique** (mode "Rebase") :
+La commande `git rebase` est une méthode avancée de gestion des branches qui permet de réécrire l’historique des commits. `git rebase` prend les modifications de votre branche courante et les place au-dessus des derniers commites d’une autre branche (comme main), pour que votre historique soit plus propre, sans commits de fusion. (Notez c'est le moyen le plus rapide pour vous faire des ennemis à vie... )
+   ```bash
+   git rebase <branche-à-fusionner>
+   ```
+
+- **Résoudre les conflits de fusion** :
+   - Modifier les fichiers conflictuels manuellement.
+   - Marquer les conflits comme résolus :
+     ```bash
+     git add <fichier-conflit>
+     ```
