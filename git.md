@@ -1,6 +1,6 @@
 # **Git**
 
-### **Configuration initiale**
+## **Configuration initiale**
 1. **Configurer votre identité utilisateur** :
    ```bash
    git config --global user.name "Votre Nom"
@@ -12,9 +12,7 @@
    git config --list
    ```
 
-___
-
-### **Démarrer un projet Git**
+## **Démarrer un projet Git**
 1. **Initialiser un dépôt Git** :
    ```bash
    git init
@@ -25,9 +23,8 @@ ___
    ```bash
    git clone <url-du-dépôt>
    ```
----
 
-### **Gestion des identifiants (credentials)** 
+## **Gestion des identifiants (credentials)** 
 Permettent de stocker les identifiants et token nécessaires à la connexion à un dépôt distant (par exemple GitHub).
 
 1. **Git Credential Manager (`manager`)** 💯 :  
@@ -58,7 +55,7 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
 >  - Relancez une commande qui nécessite un authentification, aucune authnetification ne doit vous être demandé.
 > 
 
-### **Gestion des fichiers**
+## **Gestion des fichiers**
 1. **Vérifier l'état des fichiers** (modifications locales, fichiers suivis ou non suivis) :
    ```bash
    git status
