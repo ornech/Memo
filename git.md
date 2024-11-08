@@ -12,7 +12,7 @@
    git config --list
    ```
 
-### **credential helpers** 
+### **Gestion des identifiants (credentials)** 
 Permettent de stocker les identifiants et token nécessaires à la connexion à un dépôt distant (par exemple GitHub).
 
 1. **Git Credential Manager (`manager`)** 💯 :  
