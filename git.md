@@ -17,15 +17,21 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
 
 1. **Git Credential Manager (`manager`)** 💯 :  
    - Stocke de manière **sécurisée et permanente** les identifiants dans le gestionnaire de mots de passe de ton système (macOS Keychain, Windows Credential Manager, ou Linux Keyring).
-     `git config --global credential.helper manager`
+     ```bash
+     git config --global credential.helper manager
+     ```
 
 2. **Cache temporaire (`cache`)** ⚠️:  
    - Stocke les identifiants **en mémoire** pour une durée limitée (par défaut 15 minutes, configurable).
-   `git config --global credential.helper "cache --timeout=3600"`
-
-3. **Stockage en clair (`store`)**⛔:  
-   - Stocke les identifiants **en clair** dans un fichier texte (`~/.git-credentials`).
-     `git config --global credential.helper store`
+   ```bash
+     git config --global credential.helper "cache --timeout=3600"
+   ```
+   
+3. **Stockage en clair (`store`)** ⛔:  
+   - Stocke les identifiants ⛔ **en clair** ⛔ dans un fichier texte (`~/.git-credentials`).
+   ```bash
+     git config --global credential.helper store`
+   ```
 ___
 
 ### **Démarrer un projet Git**
