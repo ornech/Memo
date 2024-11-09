@@ -112,7 +112,7 @@ Les 6 champs représentent respectivement :
 `0 18 * * 1-5 /path/to/command`
 
 **Exemple 6 Redirection de la Sortie**  
-* * * * * echo "Hello, World!" >> /path/to/logfile.log 2>&1
+`* * * * * echo "Hello, World!" >> /path/to/logfile.log 2>&1`
 
 
 #### Ressources et Documentation
