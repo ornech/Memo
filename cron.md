@@ -96,22 +96,22 @@ Les 6 champs représentent respectivement :
 | `[]`     | Spécifie une plage de valeurs.                               | `[0-5]` dans le champ des minutes signifie « de 0 à 5 minutes ».          |
 
 #### Exemples de Crontab
-**Exemple 1 : Exécuter une commande toutes les 5 minutes**  
+**Exécuter une commande toutes les 5 minutes**  
 `*/5 * * * * /path/to/command`
 
-**Exemple 2 : Exécuter une commande tous les jours à 2h du matin**  
+**Exécuter une commande tous les jours à 2h du matin**  
 `0 2 * * * /path/to/command`
 
-**Exemple 3 : Exécuter une commande tous les lundis à 3h du matin**  
+**Exécuter une commande tous les lundis à 3h du matin**  
 `0 3 * * 1 /path/to/command`
 
-**Exemple 4 : Exécuter une commande le premier jour de chaque mois à minuit**  
+**Exécuter une commande le premier jour de chaque mois à minuit**  
 `0 0 1 * * /path/to/command`
 
-**Exemple 5 : Exécuter une commande tous les jours de la semaine (lundi à vendredi) à 18h**  
+**Exécuter une commande tous les jours de la semaine (lundi à vendredi) à 18h**  
 `0 18 * * 1-5 /path/to/command`
 
-**Exemple 6 Redirection de la Sortie**  
+**Redirection de la Sortie**  
 `* * * * * echo "Hello, World!" >> /path/to/logfile.log 2>&1`
 
 
