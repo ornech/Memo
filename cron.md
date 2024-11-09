@@ -92,8 +92,8 @@ Les 6 champs représentent respectivement :
 | Symbole  | Description                                                                 | Exemple                                                                 |
 |----------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
 | `*`      | Signifie "chaque unité de temps"             | `*` dans le champ des minutes signifie « chaque minute ».               |
-| `/`      | Indiquer des intervalles.                                     | `*/5` dans le champ des minutes signifie « toutes les 5 minutes ».       |
-| `[]`     | Spécifier une plage de valeurs.                               | `[0-5]` dans le champ des minutes signifie « de 0 à 5 minutes ».          |
+| `/`      | Indique une intervalle.                                     | `*/5` dans le champ des minutes signifie « toutes les 5 minutes ».       |
+| `[]`     | Spécifie une plage de valeurs.                               | `[0-5]` dans le champ des minutes signifie « de 0 à 5 minutes ».          |
 
 #### Exemples de Crontab
 **Exemple 1 : Exécuter une commande toutes les 5 minutes**  
