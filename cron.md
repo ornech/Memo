@@ -78,14 +78,14 @@ Un fichier crontab peut contenir plusieurs lignes. Chaque ligne correspond à un
 
 
 Les 6 champs représentent respectivement :
-| Position       | Paramètres       | Valeurs possibles                                                                 |
+| Champs   | Paramètres       | Valeurs possibles                                                                 |
 |----------------|------------------|-----------------------------------------------------------------------------------|
-| 1er champs     | Les minutes      | 0-59                                                                              |
-| 2ème champs    | Les heures       | 0-23                                                                              |
-| 3ème champs    | Le jour du mois  | 0-31                                                                              |
-| 4ème champs    | Le mois          | 1-12 ou jan, fev, mar, apr, may, jun, etc...                                       |
-| 5ème champs    | Le jour de la semaine | 0-6 où 0=dimanche, sun, mon, tue, wed, thu, fri, sat                              |
-| 6ème champs    | Commande         | Utilisez la syntaxe du SHELL que vous avez défini. Sont autorisés les pipelines et redirections. |
+| 1er      | Les minutes      | 0-59                                                                              |
+| 2ème    | Les heures       | 0-23                                                                              |
+| 3ème    | Le jour du mois  | 0-31                                                                              |
+| 4ème    | Le mois          | 1-12 ou jan, fev, mar, apr, may, jun, etc...                                       |
+| 5ème    | Le jour de la semaine | 0-6 où 0=dimanche, sun, mon, tue, wed, thu, fri, sat                              |
+| 6ème    | Commande         | Utilisez la syntaxe du SHELL que vous avez défini. Sont autorisés les pipelines et redirections. |
 
 
 #### Symboles spéciaux dans les expressions cron
