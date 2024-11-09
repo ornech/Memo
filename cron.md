@@ -1,6 +1,6 @@
 # Mémo sur Cron
 
-#### Introduction
+## Introduction
 Cron est un planificateur de tâches utilisé dans les systèmes Unix pour exécuter des commandes ou des scripts à des **intervalles** de temps spécifiés. Le démon `crontd` qui est en charge de ce processus.
 
 > Notez qu'un interval de temps est un cocept bien différent d'une horaire. Un interval est cycle tandis qu'une horaire est ponctuelle. Ici nous parlons d'action à exécuter de manière cyclique.
@@ -66,7 +66,7 @@ Un fichier crontab peut contenir plusieurs lignes. Chaque ligne correspond à un
 * * * * * commande
 ```
 
-#### Variables d'environnement
+## Variables d'environnement
 **$PATH :** La variable PATH définit le chemin par défaut où se trouve les commandes que vous souhaitez exécuter.
 
 **$SHELL :** Définit le shell que cron devra utiliser pour exécuter vos tâches.
@@ -75,7 +75,7 @@ Un fichier crontab peut contenir plusieurs lignes. Chaque ligne correspond à un
 
 **$MAILTO :** Permet la notification par e-mail en cas d'erreur. Il est possible de mentionner liste de destinataire en séparant par des virgules les adresses.
 
-
+## Syntaxe détaullée
 
 Les 6 champs représentent respectivement :
 | Champs   | Paramètres       | Valeurs possibles                                                                 |
@@ -95,7 +95,7 @@ Les 6 champs représentent respectivement :
 | `/`      | Indique une intervalle.                                     | `*/5` dans le champ des minutes signifie « toutes les 5 minutes ».       |
 | `[]`     | Spécifie une plage de valeurs.                               | `[0-5]` dans le champ des minutes signifie « de 0 à 5 minutes ».          |
 
-#### Exemples de Crontab
+## Exemples de Crontab
 **Exécuter une commande toutes les 5 minutes**  
 `*/5 * * * * /path/to/command`
 
@@ -115,7 +115,7 @@ Les 6 champs représentent respectivement :
 `* * * * * echo "Hello, World!" >> /path/to/logfile.log 2>&1`
 
 
-#### Ressources et Documentation
+## Ressources et Documentation
 Pour des informations détaillées et des options avancées, consultez la documentation officielle de Cron :
 
 - [Documentation de Cron sur Linux](https://man7.org/linux/man-pages/man5/crontab.5.html)
