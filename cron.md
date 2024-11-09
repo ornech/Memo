@@ -75,7 +75,7 @@ Un fichier crontab peut contenir plusieurs lignes. Chaque ligne correspond à un
 
 **$MAILTO :** Permet la notification par e-mail en cas d'erreur. Il est possible de mentionner liste de destinataire en séparant par des virgules les adresses.
 
-## Syntaxe détaullée
+## Syntaxe détaillée
 
 Les 6 champs représentent respectivement :
 | Champs   | Paramètres       | Valeurs possibles                                                                 |
