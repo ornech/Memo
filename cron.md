@@ -3,6 +3,30 @@
 #### Introduction
 Cron est un planificateur de tâches utilisé dans les systèmes Unix et Linux pour exécuter des commandes ou des scripts à des intervalles de temps spécifiés. Ce mémo couvre les bases de l'utilisation de Cron.
 
+```bash
+# Fichier crontab
+
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Exemple de planification de tache:
+# .---------------- Minute (0 - 59)
+# |  .------------- Heure (0 - 23)
+# |  |  .---------- Jour du mois (1 - 31)
+# |  |  |  .------- Mois (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- Jour de la semaine (0 - 6) oubien sun, mon, tue, wed ... 
+# |  |  |  |  |
+# *  *  *  *  * commande
+```
+#### Variables d'environnement
+**$PATH :** La variable PATH définit le chemin par défaut où se trouve les commandes que vous souhaitez exécuter.
+
+**$SHELL :** Définit le shell que cron devra utiliser pour exécuter vos tâches.
+
+**$HOME :** La variable $HOME peut être définie dans crontab si vous avez besoin de mentionner un répertoire de travail spécifique.  
+
+**$MAILTO :** Permet la notification par e-mail en cas d'erreur. Il est possible de mentionner liste de destinataire en séparant par des virgules les adresses.
+
 #### Syntaxe de Base
 Un fichier crontab (cron table) contient des lignes de configuration pour les tâches planifiées. Chaque ligne suit le format suivant :
 
@@ -11,16 +35,23 @@ Un fichier crontab (cron table) contient des lignes de configuration pour les t�
 ```
 
 Les cinq champs représentent respectivement :
-1. **Minute** (0-59) - Spécifie la minute exacte.
-2. **Heure** (0-23) - Spécifie l'heure.
-3. **Jour du mois** (1-31) - Spécifie le jour du mois.
-4. **Mois** (1-12) - Spécifie le mois.
-5. **Jour de la semaine** (0-7) - Spécifie le jour de la semaine (0 et 7 représentent le dimanche).
+| Position       | Paramètres       | Valeurs possibles                                                                 |
+|----------------|------------------|-----------------------------------------------------------------------------------|
+| 1er champs     | Les minutes      | 0-59                                                                              |
+| 2ème champs    | Les heures       | 0-23                                                                              |
+| 3ème champs    | Le jour du mois  | 0-31                                                                              |
+| 4ème champs    | Le mois          | 1-12 ou jan, fev, mar, apr, may, jun, etc...                                       |
+| 5ème champs    | Le jour de la semaine | 0-6 où 0=dimanche, sun, mon, tue, wed, thu, fri, sat                              |
+| 6ème champs    | Commande         | Utilisez la syntaxe du SHELL que vous avez défini. Sont autorisés les pipelines et redirections. |
 
-**Remarques** : 
-- L’astérisque `*` signifie « chaque unité de temps » pour le champ correspondant.
-- Vous pouvez utiliser `/` pour indiquer des intervalles : `*/5` signifie « toutes les 5 unités » (par exemple, toutes les 5 minutes).
-  
+
+#### Symboles spéciaux dans les expressions cron
+| Symbole  | Description                                                                 | Exemple                                                                 |
+|----------|-----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| `*`      | Signifie « chaque unité de temps » pour le champ correspondant.             | `*` dans le champ des minutes signifie « chaque minute ».               |
+| `/`      | Utilisé pour indiquer des intervalles.                                     | `*/5` dans le champ des minutes signifie « toutes les 5 minutes ».       |
+| `[]`     | Utilisé pour spécifier une plage de valeurs.                               | `[0-5]` dans le champ des minutes signifie « de 0 à 5 minutes ».          |
+
 #### Exemples de Crontab
 
 1. **Toutes les minutes**
@@ -92,14 +123,6 @@ Pour supprimer toutes les tâches cron d'un autre utilisateur :
 sudo crontab -u nom_utilisateur -r
 ```
 
-#### Variables d'Environnement
-Dans un fichier crontab, il est possible de définir des variables d'environnement. Par exemple, pour recevoir les notifications par mail en cas d’erreur :
-
-```
-MAILTO="user@example.com"
-* * * * * echo "Hello, World!"
-```
-
 #### Astuces pour Cron
 1. **Utiliser des chemins complets** : Indiquez les chemins absolus pour les scripts et commandes (ex. `/usr/bin/python3` ou `/home/user/monscript.sh`), car le chemin d’accès (`$PATH`) dans l’environnement Cron peut être différent de celui de votre utilisateur.
    
@@ -110,13 +133,6 @@ Pour enregistrer les résultats et les erreurs d'une commande dans un fichier de
 
 ```
 * * * * * echo "Hello, World!" >> /path/to/logfile.log 2>&1
-```
-
-#### Utilisation de Scripts
-Vous pouvez exécuter des scripts shell en spécifiant le chemin complet du script :
-
-```
-* * * * * /path/to/script.sh
 ```
 
 #### Ressources et Documentation
