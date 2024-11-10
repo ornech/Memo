@@ -23,9 +23,9 @@
 Les contributions pour améliorer et ajouter des fonctionnalités sont les bienvenues ! Suivez ces étapes pour contribuer :
 
 1. **Forker le dépôt**.
-2. **Créer une branche** pour votre fonctionnalité (`git checkout -b feature/AjoutFonctionnalité`).
-3. **Commiter vos modifications** (`git commit -m "Ajout de la fonctionnalité XYZ"`).
-4. **Pousser la branche** (`git push origin feature/AjoutFonctionnalité`).
+2. **Créer une branche** pour votre fonctionnalité (`git checkout -b feature/modif`).
+3. **Commiter vos modifications** (`git commit -m "Modification XYZ"`).
+4. **Pousser la branche** (`git push origin -b feature/modif`).
 5. **Créer une Pull Request** en utilisant [cette documentation GitHub](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
 
 Pour plus d'informations sur la contribution, lisez le guide [Contributing to Open Source](https://opensource.guide/how-to-contribute/).
