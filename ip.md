@@ -58,6 +58,43 @@ Ajoute une route pour atteindre le réseau `192.168.2.0/24` via la passerelle `1
 ```bash
 ip route add default via <IP_PASSERELLE>
 ```
+## Les ponts
+
+### Création d'un pont
+#### Créer le pont
+```bash
+ip link add name br0 type bridge
+
+#### Ajouter des interfaces réseau au pont
+```bash
+ip link set eth0 master br0
+ip link set eth1 master br0
+```
+
+#### Activer le pont
+```bash
+ip link set br0 up
+```
+
+#### Attribuer une adresse IP au pont
+```bash
+ip addr add 192.168.1.1/24 dev br0
+```
+
+#### Listes les ponts
+```bash
+ip link show type bridge
+```
+
+#### Supprimer un pont
+1) D'abord l'éteindre
+```bash
+ip link set br0 down
+```
+2) Puis l'éteindre
+```bash
+ip link delete br0 type bridge
+```
 
 ## Gestion des VLAN
 
