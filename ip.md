@@ -41,23 +41,6 @@ ip link set eth0 down
 ```
 Active (`up`) ou désactive (`down`) l'interface `eth0`.
 
-## Gestion des routes
-#### Afficher la table de routage
-```bash
-ip route
-```
-Montre la table de routage actuelle, y compris les routes par défaut et spécifiques.
-
-#### Configurer une route
-```bash
-ip route add 192.168.2.0/24 via 192.168.1.1
-```
-Ajoute une route pour atteindre le réseau `192.168.2.0/24` via la passerelle `192.168.1.1`.
-
-#### AJouter une route par défaut
-```bash
-ip route add default via <IP_PASSERELLE>
-```
 ## Les ponts
 #### Créer le pont
 ```bash
@@ -95,6 +78,25 @@ ip link set br0 down
 ip link delete br0 type bridge
 ```
 
+
+
+## Gestion des routes
+#### Afficher la table de routage
+```bash
+ip route
+```
+Montre la table de routage actuelle, y compris les routes par défaut et spécifiques.
+
+#### Configurer une route
+```bash
+ip route add 192.168.2.0/24 via 192.168.1.1
+```
+Ajoute une route pour atteindre le réseau `192.168.2.0/24` via la passerelle `192.168.1.1`.
+
+#### AJouter une route par défaut
+```bash
+ip route add default via <IP_PASSERELLE>
+```
 ## Gestion des VLAN
 
 #### Ajouter une interface VLAN
