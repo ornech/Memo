@@ -59,11 +59,10 @@ Ajoute une route pour atteindre le réseau `192.168.2.0/24` via la passerelle `1
 ip route add default via <IP_PASSERELLE>
 ```
 ## Les ponts
-
-### Création d'un pont
 #### Créer le pont
 ```bash
 ip link add name br0 type bridge
+```
 
 #### Ajouter des interfaces réseau au pont
 ```bash
