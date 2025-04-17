@@ -78,7 +78,7 @@ sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
 
 ---
 
-### 📊 7. Vérifier
+### Vérifier
 
 ```bash
 df -h
