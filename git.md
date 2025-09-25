@@ -154,7 +154,11 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
    ```bash
    git fetch origin
    ```
-
+5. **[JOKER] Remplacer les fichiers locaux par les fichiers du dépôt distant** :
+   ```bash
+   git restore .
+   git pull
+   ```
 
 ## **Gestion des modifications**
 - **Afficher les différences non validées** (entre le fichier modifié et la stagging area) :
