@@ -81,5 +81,3 @@ ping -c 3 1.1.1.1
 # Tester la résolution DNS
 ping -c 3 debian.org
 ```
-
-Veux-tu que je te prépare le script `nat-vbox.sh` prêt à être mis dans `/etc/network/if-up.d/` pour qu’il s’applique automatiquement à chaque démarrage réseau ?
