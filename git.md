@@ -52,10 +52,11 @@ Permettent de stocker les identifiants et token nécessaires à la connexion à 
      git config --global credential.helper store`
    ```
 > ℹ️ **Comment enregistrer mes identifiants et tokens**
->  - Faite une commande git qui nécessite une authentification (`git pull origin`)
->  - Renseignez votre identifiant et votre token
->  - Il a été sauvegardé à la première connexion si vous avez correctement renseigné `git config --global credential.helper <option>`
->  - Relancez une commande qui nécessite un authentification, aucune authnetification ne doit vous être demandé.
+>  - Exécutez une commande Git nécessitant une authentification (par exemple : `git pull origin).
+>  - Saisissez votre identifiant et votre token lorsqu’ils sont demandés.
+>  - Vos informations seront enregistrées dès cette première connexion, à condition d’avoir correctement configuré l’option credential.helper via :
+git config --global credential.helper <option>
+>  - Relancez ensuite une commande nécessitant une authentification : aucune demande d’identification ne devrait apparaître.
 
 
 ## **Gestion des fichiers**
