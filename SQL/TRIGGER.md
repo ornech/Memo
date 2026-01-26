@@ -1,6 +1,6 @@
 # Les Déclencheurs (Triggers)
 
-Un trigger peut déclencher l’exécution d'une ou  plusieurs instructions SQL supplémentaires, automatiquement lorsqu’un événement (`INSERT`, `UPDATE`, `DELETE`) intervient sur une table.
+Un TRIGGER peut déclencher l’exécution automatiquement d'une ou  plusieurs instructions SQL suite à un `INSERT`, `UPDATE`ou `DELETE` sur une table.
 Cela permet de:  
 - imposer une règle métier **indépendamment du code applicatif**,  
 - automatiser des mises à jour techniques
@@ -14,15 +14,15 @@ Ici, garantir l’intégrité des données signifie empêcher qu’une donnée i
 ## 3. Moment d’exécution : BEFORE / AFTER 
 
 Un déclencheur peut être exécuté à un moment précis suite à un évènement:
-- **BEFORE** : exécuté avant la modification de **chaque ligne visée** par l’instruction.  
-- **AFTER** : exécuté après la modification de **chaque ligne visée** par l’instruction.
+– **BEFORE** : exécuté avant la modification de **chaque ligne visée** par l’instruction.  
+– **AFTER** : exécuté après la modification de **chaque ligne visée** par l’instruction.
 
 Conséquence directe :  
-- `NEW` est modifiable uniquement en `BEFORE`,  
-- `AFTER` sert à réagir à une modification déjà actée, pas à la corriger.
+– `NEW` est modifiable uniquement en `BEFORE`,  
+– `AFTER` sert à réagir à une modification déjà actée, pas à la corriger.
 
 ## 4. Objets de transition : OLD et NEW
-OLD et NEW représentent respectivement l’état précédent et l’état courant d’une ligne unique pendant l’exécution du trigger.
+Les objets `OLD` et `NEW` donnent accès aux données avant et après modification pour chaque ligne concernée par l’événement.
 
 |Contexte|Accès autorisé|
 |---|---|
@@ -32,7 +32,7 @@ OLD et NEW représentent respectivement l’état précédent et l’état coura
 
 ## 5. FOR EACH ROW 
 
-MariaDB **exige** la clause `FOR EACH ROW`car le moteur MariaDB ne peut fournir des valeurs cohérentes de `OLD` et `NEW` que pour **une seule ligne à la fois**. Il faut donc mentionner explicitement l’exécution **ligne par ligne** avec `FOR EACH ROW`.
+MariaDB **exige** la clause `FOR EACH ROW`car le moteur MariaDB ne peut fournir des valeurs cohérentes de `OLD` et `NEW` que pour **une seule ligne à la fois**. Il faut donc mentionner explicitement l’exécution **ligne par ligne** avec `FOR EACH ROW`car une requête déclanchant un TRIGGER peut toucher plusieurs.
 
 Le moteur SQL :
 1. sélectionne une ligne,
@@ -46,21 +46,18 @@ Conséquences observables :
 – l’ordre d’exécution dépend du moteur et du nombre de lignes impactées.
 
 ## 6. Règles:
-Un trigger ne peut pas modifier la table qu’il surveille : toute tentative provoque une erreur (1442).
+- MariaDB interdit un `INSERT`, `UPDATE`, `DELETE` sur la **même table** que celle qui a déclenché le trigger (Erreur 1442).
+- Un trigger peut exécuter des requêtes sur **d’autres tables** sans enfreindre cette restriction.
+- Les objets `NEW` et `OLD` permettent d’accéder/ajuster **les valeurs de la ligne en cours** sans exécuter une requête SQL sur une table surveillé par le TRIGGER.
 
 ## 7. Exemple minimal
 
 ```sql
-DELIMITER //
-
-CREATE TRIGGER t_auto_date_produit
-BEFORE UPDATE ON produits
+CREATE TRIGGER update_date
+BEFORE UPDATE ON table1
 FOR EACH ROW
-BEGIN
-    SET NEW.date_derniere_modif = NOW();
-END//
+SET NEW.date = NOW();
 
-DELIMITER ;
 ```
 
 ## 9. A retenir
