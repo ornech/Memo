@@ -12,23 +12,22 @@ Ici, garantir l’intégrité des données signifie empêcher qu’une donnée i
 - un prix ne peut pas être inférieur à zéro.
 
 ## 3. Moment d’exécution : BEFORE / AFTER 
-
 Un déclencheur peut être exécuté à un moment précis suite à un évènement:
-– **BEFORE** : exécuté avant la modification de **chaque ligne visée** par l’instruction.  
-– **AFTER** : exécuté après la modification de **chaque ligne visée** par l’instruction.
+- **BEFORE** : exécuté avant la modification de **chaque ligne visée** par l’instruction.
+- **AFTER** : exécuté après la modification de **chaque ligne visée** par l’instruction.
 
 Conséquence directe :  
-– `NEW` est modifiable uniquement en `BEFORE`,  
-– `AFTER` sert à réagir à une modification déjà actée, pas à la corriger.
+- `NEW` est modifiable uniquement en `BEFORE`,
+- `AFTER` sert à réagir à une modification déjà actée, pas à la corriger.
 
 ## 4. Objets de transition : OLD et NEW
 Les objets `OLD` et `NEW` donnent accès aux données avant et après modification pour chaque ligne concernée par l’événement.
 
-|Contexte|Accès autorisé|
-|---|---|
-|INSERT|`NEW`|
-|UPDATE|`OLD` et `NEW`|
-|DELETE|`OLD`|
+|Contexte|Objet(s) disponible(s)|Remarque|
+|---|---|---|
+|INSERT|`NEW`| Il n'y a pas d'ancienne valeur lors d'un INSERT |
+|UPDATE|`OLD` et `NEW`| - |
+|DELETE|`OLD`| Il n'y a pas de nouvelle valeur suite à une DELETE |
 
 ## 5. FOR EACH ROW 
 
