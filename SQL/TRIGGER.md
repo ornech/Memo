@@ -30,8 +30,7 @@ Les objets `OLD` et `NEW` donnent accès aux données avant et après modificati
 |DELETE|`OLD`| Il n'y a pas de nouvelle valeur suite à une DELETE |
 
 ## 5. FOR EACH ROW 
-
-MariaDB **exige** la clause `FOR EACH ROW`car le moteur MariaDB ne peut fournir des valeurs cohérentes de `OLD` et `NEW` que pour **une seule ligne à la fois**. Il faut donc mentionner explicitement l’exécution **ligne par ligne** avec `FOR EACH ROW`car une requête déclanchant un TRIGGER peut toucher plusieurs.
+MariaDB impose la clause FOR EACH ROW car une instruction déclenchante peut affecter plusieurs lignes, alors que les objets OLD et NEW ne représentent qu’une ligne unique. Le moteur exécute donc le trigger séparément pour chaque ligne affecté par le TRIGGER afin de garantir des valeurs cohérentes de OLD et NEW.
 
 Le moteur SQL :
 1. sélectionne une ligne,
@@ -39,10 +38,9 @@ Le moteur SQL :
 3. exécute le trigger,
 4. passe à la ligne suivante.
 
-Conséquences observables :  
-– un `UPDATE` sur 10 000 lignes déclenche 10 000 exécutions,  
-– une règle métier apparemment simple peut devenir un goulet de performance,  
-– l’ordre d’exécution dépend du moteur et du nombre de lignes impactées.
+Conséquences :  
+– Si un TRIGGER sur un `UPDATE` d'un table impact 10 000 lignes, le TRIGGER exécutera 10 000 fois la tache qu'il est censé faire.  
+
 
 ## 6. Règles:
 - MariaDB interdit un `INSERT`, `UPDATE`, `DELETE` sur la **même table** que celle qui a déclenché le trigger (Erreur 1442).
