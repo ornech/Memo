@@ -29,7 +29,7 @@ INOUT : valeur fournie lors de l’appel, puis modifiée par la procédure.
 
 ## Exemple paramètre IN
 
-```
+```sql
 CREATE TEMPORARY TABLE tmp_table (
   multiplicateur INT,
   facteur INT,
@@ -105,7 +105,7 @@ DELIMITER ;
 ```
 
 Appel
-```
+```sql
 SET @v = 10;
 CALL incrementer(@v);
 SELECT @v;
