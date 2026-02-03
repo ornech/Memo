@@ -14,24 +14,20 @@ END;
 
 ```
 
-⚠️ Le changement de DELIMITER est nécessaire pour distinguer la fin de la procédure des requetes.
+⚠️ Le changement de DELIMITER est nécessaire pour distinguer la fin de la procédure des requetes de la procedure.
 
+# Paramètres (IN, OUT, INOUT)
 
----
-
-Paramètres (IN, OUT, INOUT)
-
-IN : valeur fournie à l’appel de la procédure (lecture seule).
+IN : valeur fournie lors de l’appel de la procédure (lecture seule).
 
 OUT : désigne un paramètre de sortie, une variable où la procédure écrit le résultat.
 
-INOUT : valeur fournie à l’appel, puis modifiée par la procédure.
-
+INOUT : valeur fournie lors de l’appel, puis modifiée par la procédure.
 
 
 ---
 
-Exemple
+## Exemple paramètre IN
 
 ```
 CREATE TEMPORARY TABLE tmp_table (
@@ -59,9 +55,8 @@ DELIMITER ;
 CALL multi(2);
 
 ```
----
 
-## Exemple avec OUT
+## Exemple paramètre OUT
 
 
 ``` SQL
@@ -93,7 +88,7 @@ La portée de la variable `@r` se limite  à la session SQL de l’utilisateur.
 
 ---
 
-Exemple INOUT
+## Exemple paramètre INOUT
 ``` SQL
 DELIMITER //
 
