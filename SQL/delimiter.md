@@ -3,25 +3,17 @@
 Observation :  
 ```sql
 SELECT 1;
+```
 
-Effet observable : le caractère ; marque la fin d’une instruction SQL.
+Le caractère ; marque la fin d’une instruction SQL.
 
-
----
 
 Rôle du DELIMITER
 
-Changer temporairement le délimiteur de commandes.
+Permet de changer temporairement le caractère indiquand l’exécution d’une instruction. Est nécessaire pour la creation de trigger ou procedure stockée.
 
-Délimiteur par défaut : ;
+Délimiteur par défaut `;`
 
-Le délimiteur indique au client SQL où une instruction se termine.
-
-
-
----
-
-Point critique
 
 Observation :
 
@@ -34,17 +26,10 @@ Par défaut, le SGBD interprète chaque ; comme une fin de commande.
 Résultat : un bloc est coupé avant d’être entièrement lu.
 
 Ce problème apparaît notamment avec :
-
-IF
-
-CASE
-
-WHILE
-
-FOR
-
-
-Le client SQL n’a aucune notion de « bloc logique », seulement de délimiteur.
+ - IF
+ - CASE
+ - WHILE
+ - FOR
 
 
 ---
