@@ -16,12 +16,12 @@ Délimiteur par défaut `;`
 
 
 Observation :
-
+```SQL
 BEGIN
   SET a = 1;
   SET b = 2;
 END;
-
+```
 Par défaut, le SGBD interprète chaque ; comme une fin de commande.
 Résultat : un bloc est coupé avant d’être entièrement lu.
 
@@ -37,20 +37,20 @@ Ce problème apparaît notamment avec :
 Syntaxe
 
 Observation :
-
+```
 DELIMITER //
-
+```
 Effet :
 // devient le nouveau marqueur de fin d’instruction.
 Le code peut contenir librement des ;.
-
+```SQL
 DELIMITER //
 
 BEGIN
   SET a = 1;
   SET b = 2;
 END//
-
+```
 DELIMITER ;
 
 Retour à l’état normal :
